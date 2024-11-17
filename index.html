@@ -1,21 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.46/moment-timezone-with-data-1970-2030.js"></script>
     <title>World Clock - Rafa Rocha</title>
-</head>
-<body>
-    <h1>World Clock</h1>
+  </head>
+  <body>
+    <div class="container">
+      <h1>World Clock</h1>
+      <select name="country" id="countries">
+        <option value="">Select a city...</option>
+        <option value="usa">New York</option>
+        <option value="canada">Toronto</option>
+        <option value="australia">Sydney</option>
+        <option value="england">London</option>
+      </select>
+
+      <div class="city">
+        <h2>Los Angeles 🇺🇸</h2>
+        <div class="date">August 15th 2023</div>
+        <div class="time">1:43:53 PM</div>
+      </div>
+      <div class="city">
+        <h2>São Paulo 🇧🇷</h2>
+        <div class="date">August 15th 2023</div>
+        <div class="time">1:43:53 PM</div>
+      </div>
+    </div>
+
     <footer>
-        This project was coded by 
-        <a href="https://www.shecodes.io/graduates/142025-rafaela-oliveira-rocha" target="_blank">Rafa Rocha</a> and is open sourced on
-        <a href="https://github.com/RafaORocha/World.Clock" target="_blank">GitHub</a> and hosted on 
-        <a href="https://timezone-clockapp.netlify.app/" target="_blank">Netlify</a>
-    </footer> 
+      This project was coded by
+      <a
+        href="https://www.shecodes.io/graduates/142025-rafaela-oliveira-rocha"
+        target="_blank"
+        >Rafa Rocha</a
+      >
+      and is open sourced on
+      <a href="https://github.com/RafaORocha/World.Clock" target="_blank"
+        >GitHub</a
+      >
+      and hosted on
+      <a href="https://timezone-clockapp.netlify.app/" target="_blank"
+        >Netlify</a
+      >
+    </footer>
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
