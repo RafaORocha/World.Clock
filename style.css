@@ -98,3 +98,8 @@ footer {
   font-style: italic;
   color: white;
 }
+
+a {
+  color: #f5f1fe;
+  text-decoration: none;
+}
