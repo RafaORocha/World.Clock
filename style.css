@@ -45,12 +45,12 @@ body {
 .date-1,
 .date-2 {
   font-size: 14px;
-  margin: 0;
+  line-height: 30px;
 }
 
 .time {
   font-size: 40px;
-  width: 400;
+  font-weight: bold;
 }
 
 .time small {
@@ -71,9 +71,10 @@ body {
 }
 
 select {
+  display: block;
   width: 100%;
-   margin: 1.5rem 0;
-  padding: 0.8rem;
+  margin: 24px 0;
+  padding: 12.8px;
   border-radius: 10px;
   border: none;
   background: rgba(255, 255, 255, 0.9);
@@ -93,10 +94,10 @@ h1 {
 
 footer {
   text-align: center;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 450;
   font-style: italic;
-  color: white;
+  color: rgba(255, 255, 255, 0.878);
 }
 
 a {
