@@ -44,6 +44,11 @@ function updateCity(event) {
   //this is going to be whatever is inside the atribute "value"
   let cityTimeZone = event.target.value;
   //console.log(cityTimeZone);
+  //We need to add the current time zone
+  if (cityTimeZone === "current") {
+    cityTimeZone = moment.tz.guess();
+  }
+  
   //We will create a new variable to fix the city name
   let cityName = cityTimeZone.replace("_", " ").split("/")[1];
   let cityTime = moment().tz(cityTimeZone);
@@ -51,7 +56,7 @@ function updateCity(event) {
 
   //I want to Select "cities" to replace all the cities data
   let citiesElement = document.querySelector("#cities");
-  citiesElement.innerHTML = `<div class="city">
+  citiesElement.innerHTML += `<div class="city">
           <div>
             <div class="city-flag">
               <h2>${cityName}</h2>
