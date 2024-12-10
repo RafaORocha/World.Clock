@@ -58,9 +58,9 @@ function updateCity(event) {
   let citiesElement = document.querySelector("#cities");
   citiesElement.innerHTML = `<div class="city">
           <div>
-            <div class="city-flag">
-              <h2>${cityName}</h2>
-            </div>
+              <h2>
+              <a href="file:///Users/rafaelarocha/Desktop/World.Clock/index.html">${cityName}</a>
+              </h2>
             <div class="date-1">${cityTime.format("dddd, MMMM Do YYYY")}</div>
           </div>
           <div class="time">${cityTime.format(
