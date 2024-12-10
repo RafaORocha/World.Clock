@@ -58,18 +58,6 @@ body {
   vertical-align: middle;
 }
 
-.city-flag {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.city-icon {
-  width: 24px;
-  height: 24px;
-  object-fit: cover;
-}
-
 select {
   display: block;
   width: 100%;
