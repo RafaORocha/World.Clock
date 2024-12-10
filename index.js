@@ -10,14 +10,14 @@ function updateTime() {
   let losAngelesTimeElement = losAngelesElement.querySelector(".time");
   let losAngelesTime = moment().tz("America/Los_Angeles");
 
-  losAngelesDateElement.innerHTML = losAngelesTime.format("dddd, MMMM Mo YYYY");
+  losAngelesDateElement.innerHTML = losAngelesTime.format("dddd, MMMM Do YYYY");
   //We can make it better...
   //losAngelesTimeElement.innerHTML = `${losAngelesTime.format("H:m:s")} <small>${losAngelesTime.format("A")}</small>`;
   losAngelesTimeElement.innerHTML = losAngelesTime.format(
     "H:mm:ss:SSS [<small>]A[</small>]"
   );
 
-//São Paulo
+  //São Paulo
   let saoPauloElement = document.querySelector("#sao-paulo");
 
   //the query will select the element with the "id" of "los-angeles" and find the element with the class of "date-1"
@@ -28,13 +28,41 @@ function updateTime() {
   let saoPauloTimeElement = saoPauloElement.querySelector(".time");
   let saoPauloTime = moment().tz("America/Sao_Paulo");
 
-  saoPauloDateElement.innerHTML = saoPauloTime.format("dddd, MMMM Mo YYYY");
+  saoPauloDateElement.innerHTML = saoPauloTime.format("dddd, MMMM Do YYYY");
   //We can make it better...
   //losAngelesTimeElement.innerHTML = `${losAngelesTime.format("H:m:s")} <small>${losAngelesTime.format("A")}</small>`;
   saoPauloTimeElement.innerHTML = saoPauloTime.format(
     "H:mm:ss:SSS [<small>]A[</small>]"
-  )};
+  );
+}
 
 updateTime();
-
 setInterval(updateTime, 1);
+
+//We need to define the function "UpdateCity"
+function updateCity(event) {
+  //this is going to be whatever is inside the atribute "value"
+  let cityTimeZone = event.target.value;
+  //console.log(cityTimeZone);
+  //We will create a new variable to fix the city name
+  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+  let cityTime = moment().tz(cityTimeZone);
+  //console.log(cityTime.format("dddd, MMMM Do YYYY"));
+
+  //I want to Select "cities" to replace all the cities data
+  let citiesElement = document.querySelector("#cities");
+  citiesElement.innerHTML = `<div class="city">
+          <div>
+            <div class="city-flag">
+              <h2>${cityName}</h2>
+            </div>
+            <div class="date-1">${cityTime.format("dddd, MMMM Do YYYY")}</div>
+          </div>
+          <div class="time">${cityTime.format(
+            "H:mm:ss:SSS"
+          )} <small>${cityTime.format("A")}</small></div>
+        </div>`;
+}
+
+let citiesSelectElement = document.querySelector("#countries");
+citiesSelectElement.addEventListener("change", updateCity);
