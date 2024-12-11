@@ -58,9 +58,7 @@ function updateCity(event) {
   let citiesElement = document.querySelector("#cities");
   citiesElement.innerHTML = `<div class="city">
           <div>
-              <h2>
-              <a href="https://timezone-clockapp.netlify.app/">${cityName}</a>
-              </h2>
+              <h2>${cityName}</h2>
             <div class="date-1">${cityTime.format("dddd, MMMM Do YYYY")}</div>
           </div>
           <div class="time">${cityTime.format(
@@ -72,9 +70,7 @@ function updateCity(event) {
     let cityTime = moment().tz(cityTimeZone);
     citiesElement.innerHTML = `<div class="city">
           <div>
-              <h2>
-              <a href="https://timezone-clockapp.netlify.app/">${cityName}</a>
-              </h2>
+              <h2>${cityName}</h2>
             <div class="date-1">${cityTime.format("dddd, MMMM Do YYYY")}</div>
           </div>
           <div class="time">${cityTime.format(
@@ -82,6 +78,8 @@ function updateCity(event) {
           )} <small>${cityTime.format("A")}</small></div>
         </div>`;
   }, 1000);
+
+  document.querySelector("#homepagebutton").style.visibility = "visible";
 }
 
 let citiesSelectElement = document.querySelector("#countries");
