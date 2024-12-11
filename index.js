@@ -37,7 +37,7 @@ function updateTime() {
 }
 
 updateTime();
-setInterval(updateTime, 1);
+setInterval(updateTime, 1000);
 
 //We need to define the function "UpdateCity"
 function updateCity(event) {
@@ -59,7 +59,7 @@ function updateCity(event) {
   citiesElement.innerHTML = `<div class="city">
           <div>
               <h2>
-              <a href="file:///Users/rafaelarocha/Desktop/World.Clock/index.html">${cityName}</a>
+              <a href="https://timezone-clockapp.netlify.app/">${cityName}</a>
               </h2>
             <div class="date-1">${cityTime.format("dddd, MMMM Do YYYY")}</div>
           </div>
@@ -67,6 +67,21 @@ function updateCity(event) {
             "H:mm:ss:SSS"
           )} <small>${cityTime.format("A")}</small></div>
         </div>`;
+
+  setInterval(() => {
+    let cityTime = moment().tz(cityTimeZone);
+    citiesElement.innerHTML = `<div class="city">
+          <div>
+              <h2>
+              <a href="https://timezone-clockapp.netlify.app/">${cityName}</a>
+              </h2>
+            <div class="date-1">${cityTime.format("dddd, MMMM Do YYYY")}</div>
+          </div>
+          <div class="time">${cityTime.format(
+            "H:mm:ss:SSS"
+          )} <small>${cityTime.format("A")}</small></div>
+        </div>`;
+  }, 1000);
 }
 
 let citiesSelectElement = document.querySelector("#countries");
